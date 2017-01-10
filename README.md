@@ -10,12 +10,7 @@ Here are the basic steps required in order to run and produce data for RAISHIN.
 ```python
 prepare.py 2 512 24
 ```
-
-Preparing the same run in a desktop machine:
-
-    prepare.py 2 8 0
-
-3. If running in a cluster: I simply run the bash script `toac.sh` to send it from my workstation to the alphacrucis cluster.
+3. Run `toac.sh` to send it to alphacrucis.
 
 4. `make` and `qsub mpirun.job` to submit the job. Wait. Use `status.sh` once in a while to check the status of your simulation.
 
