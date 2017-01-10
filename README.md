@@ -15,7 +15,7 @@ Preparing the same run in a desktop machine:
 
     prepare.py 2 8 0
 
-3. If running in a cluster: copy the resulting files to `alphacrucis` (24 cores/node). I use a `bitbucket` repo specific for this purpose (`git push` on your station, `git pull` on `alphacrucis`).
+3. If running in a cluster: I simply run the bash script `toac.sh` to send it from my workstation to the alphacrucis cluster.
 
 4. `make` and `qsub mpirun.job` to submit the job. Wait. Use `status.sh` once in a while to check the status of your simulation.
 
