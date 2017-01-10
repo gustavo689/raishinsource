@@ -1,0 +1,27 @@
+NAME = xconvert
+FC = gfortran
+#FC = ifort
+FFLAGS = -O2 -Wall
+#FFLAGS = -c -O2 -g
+#OBJS = convert_idl.o
+OBJS = pram.o convert_vtk2dn1.o
+#OBJS = pram.o convert_idl2.o
+#OBJS = convert_vtk2dn.o
+#OBJS = convert_vtk3dn.o 
+LD = $(FC)
+LFLAGS = 
+LIBS = 
+COMMON_MOD = pram.f90
+
+.SUFFIXES:.o .f90
+
+$(NAME):$(OBJS)
+	$(LD) $(LFLAGS) $(OBJS) -o $(NAME).exe $(LIBS)
+
+.f90.o:
+	$(FC) $(FFLAGS) -c $<
+
+clean:
+	rm -f core *.o *.exe *.mod
+
+$(OBJS): $(COMMON_MOD)

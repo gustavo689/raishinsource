@@ -1,0 +1,10 @@
+#PBS -S /bin/bash
+#PBS -l walltime=48:00:00
+#PBS -l nodes=11:ppn=24
+#PBS -e grmhd.err
+#PBS -o grmhd.out
+
+# execute program
+cd /sto/home/gustavo/raishin/
+
+mpirun -n 264 -machinefile $PBS_NODEFILE /sto/home/gustavo/raishin/xgrmhd.exe
